@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Form</title>
+        <link rel="stylesheet" href="csss.css"/>
+    </head>
+    <body>
+        <center><h1>Enter the data</h1></center>
+        <br>
+        <h1 id="123">heello</h1>
+        <form id="myForm">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="text" id="lname" name="lname">
+        </form>
+        <button onclick="exportToExcel()">Download Data</button>
+        <script>
+            function exportToExcel() {
+                // Get the form data
+                var formData = document.forms["myForm"].elements;
+                var csvData = [];
+                
+                // Get the field names
+                var fieldNames = [];
+                for (var i = 0; i < formData.length; i++) {
+                    fieldNames.push(formData[i].name);
+                }
+                
+                // Add the field names to the CSV data
+                csvData.push('"' + fieldNames.join('","') + '"');
+
+                // Loop through the form fields and build the CSV data
+                var row = [];
+                for (var i = 0; i < formData.length; i++) {
+                    var fieldValue = formData[i].value;
+                    fieldValue = fieldValue.replace(/"/g, '""');
+                    row.push('"' + fieldValue + '"');
+                }
+                
+                // Add the row to the CSV data
+                
+
+                // Convert the CSV data to a string and encode it for download
+                
+            }
+
+        </script>
+    </body>
+</html>

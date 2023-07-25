@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <form id="fn">
+            <label>Username</label>
+            <input type="text">
+            <br>
+            <label>Mobile Number</label>
+            <input type="number">
+            <br>
+            <label>Email ID</label>
+            <input type="email">
+            <br>
+            <label>Password</label>
+            <input type="password">
+            <br>
+            <!-- <input type="checkbox" id="cb1" name="cb1" value="check">
+            <label for="cb1">CheckBox</label><br> -->
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+            <input type="submit">
+            <select name="college">
+                <option></option>
+                <option>AEC</option>
+                <option>ACET</option>
+                <option>ACOE</option>
+
+            </select>
+        </form>
+        <button onclick="addtabledata()">ADD USERNAME</button>
+        <table id="tbl" border="1" style="text-align: center;">
+            <thead>
+                <th>USERNAME</th>
+                <th>MOBILE</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+                <th>GENDER</th>
+            </thead>
+        </table>
+        <script>
+            function addtabledata(){
+            var fd = document.forms["fn"].elements;
+            var un = fd[0].value;
+            var no = fd[1].value;
+            var em = fd[2].value;
+            var pwd = fd[3].value;
+            var gen = fd[4].value;
+            let tblData = document.getElementById('tbl');
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td>'+un+'</td><td>'+no+'</td><td>'+em+'</td><td>'+pwd+'</td><td>'+gen+'</td>';
+            alert(tr);
+            tblData.append(tr);   
+        }
+        </script>
+    </body>
+</html>
+
+<!-- 
+    attributes
+value
+readonly
+disabled
+maxlength
+placeholder
+required
+autofocus
+autocomplete 
+-->
